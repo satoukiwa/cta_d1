@@ -1,4 +1,6 @@
 ActiveAdmin.register TimeTable do
+
+ permit_params :train_number, :station_name, :stop_name, :arrival_time, :departure_time, :stop_id, :date
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
