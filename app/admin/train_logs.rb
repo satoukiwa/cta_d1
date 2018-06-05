@@ -1,4 +1,6 @@
 ActiveAdmin.register TrainLog do
+
+ permit_params :train_number, :station_name, :stop_name, :train_locationbasestation, :record_time, :train_locationmileage
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
