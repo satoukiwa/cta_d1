@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "stop_data#index"
   # Routes for the Cta_loc resource:
   # CREATE
   get "/cta_locs/new", :controller => "cta_locs", :action => "new"
