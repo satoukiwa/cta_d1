@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @time_table.errors.any? %>
+  <% @time_table.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Time Table</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_time_table" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for train_number -->
+      <div class="form-group">
+        <label for="train_number" class="control-label">
+          Train number
+        </label>
+
+        <input type="text" id="train_number" name="train_number" placeholder="Train number" class="form-control" value="<%= @time_table.train_number %>">
+      </div>
+
+      <!-- Label and input for station_name -->
+      <div class="form-group">
+        <label for="station_name" class="control-label">
+          Station name
+        </label>
+
+        <input type="text" id="station_name" name="station_name" placeholder="Station name" class="form-control" value="<%= @time_table.station_name %>">
+      </div>
+
+      <!-- Label and input for stop_name -->
+      <div class="form-group">
+        <label for="stop_name" class="control-label">
+          Stop name
+        </label>
+
+        <input type="text" id="stop_name" name="stop_name" placeholder="Stop name" class="form-control" value="<%= @time_table.stop_name %>">
+      </div>
+
+      <!-- Label and input for arrival_time -->
+      <div class="form-group">
+        <label for="arrival_time" class="control-label">
+          Arrival time
+        </label>
+
+        <input type="text" id="arrival_time" name="arrival_time" placeholder="Arrival time" class="form-control" value="<%= @time_table.arrival_time %>">
+      </div>
+
+      <!-- Label and input for departure_time -->
+      <div class="form-group">
+        <label for="departure_time" class="control-label">
+          Departure time
+        </label>
+
+        <input type="text" id="departure_time" name="departure_time" placeholder="Departure time" class="form-control" value="<%= @time_table.departure_time %>">
+      </div>
+
+      <!-- Label and input for stop_id -->
+      <div class="form-group">
+        <label for="stop_id" class="control-label">
+          Stop
+        </label>
+
+        <input type="text" id="stop_id" name="stop_id" placeholder="Stop" class="form-control" value="<%= @time_table.stop_id %>">
+      </div>
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @time_table.date %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Time Table
+      </button>
+      or
+      <a href="/time_tables">Cancel</a>
+    </form>
+  </div>
+</div>

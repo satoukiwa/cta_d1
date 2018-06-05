@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>
+    Time tables
+    <a href="/time_tables/new" class="btn btn-lg btn-success">New Time table</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Train number</th>
+        <th>Station name</th>
+        <th>Stop name</th>
+        <th>Arrival time</th>
+        <th>Departure time</th>
+        <th>Stop</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @time_tables.each do |time_table| %>
+      <tr>
+        <td><%= time_table.train_number %></td>
+        <td><%= time_table.station_name %></td>
+        <td><%= time_table.stop_name %></td>
+        <td><%= time_table.arrival_time %></td>
+        <td><%= time_table.departure_time %></td>
+        <td><%= time_table.stop_id %></td>
+        <td><%= time_table.date %></td>
+        <td>
+          <a href="/time_tables/<%= time_table.id %>" class="btn btn-primary">Show</a>
+          <a href="/time_tables/<%= time_table.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_time_table/<%= time_table.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
