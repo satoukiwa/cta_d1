@@ -3,6 +3,309 @@
     Cta locs
     <a href="/cta_locs/new" class="btn btn-lg btn-success">New Cta loc</a>
   </h1>
+</div><div class="row mb-1">
+  <div class="col-md-12">
+    <%= search_form_for @q, :class => collapse_search_form, :id => "cta_locs_filters" do |f| %>
+      <p class="lead">Narrow results:</p>
+
+        <div class="form-group">
+  <%= f.label :rn, "Rn" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :rn_gteq, :class => "form-control", :placeholder => "Rn greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :rn_lteq, :class => "form-control", :placeholder => "Rn less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <%= f.label :heading_cont, "Heading contains" %>
+    <%= f.text_field :heading_cont, :class => "form-control", :placeholder => "Heading contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :lon, "Lon" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :lon_gteq, :class => "form-control", :placeholder => "Lon greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :lon_lteq, :class => "form-control", :placeholder => "Lon less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :lat, "Lat" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :lat_gteq, :class => "form-control", :placeholder => "Lat greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :lat_lteq, :class => "form-control", :placeholder => "Lat less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :flags, "Flags" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :flags_gteq, :class => "form-control", :placeholder => "Flags greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :flags_lteq, :class => "form-control", :placeholder => "Flags less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :isdly, "Isdly" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :isdly_gteq, :class => "form-control", :placeholder => "Isdly greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :isdly_lteq, :class => "form-control", :placeholder => "Isdly less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :isapp, "Isapp" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :isapp_gteq, :class => "form-control", :placeholder => "Isapp greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :isapp_lteq, :class => "form-control", :placeholder => "Isapp less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+          <%= f.label :arrt, "Arrt" %>
+          <div class="row">
+            <div class='col-md-6 mb-1'>
+              <div class='input-group date' id='arrtgteqPicker'>
+                  <%= f.text_field :arrt_gteq, :class => "form-control", :placeholder => "Arrt greater than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+            <div class='col-md-6'>
+              <div class='input-group date' id='arrtlteqPicker'>
+                  <%= f.text_field :arrt_lteq, :class => "form-control", :placeholder => "Arrt less than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#arrtgteqPicker').datetimepicker({
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#arrtlteqPicker').datetimepicker({
+                  useCurrent: false,
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#arrtgteqPicker').on("dp.change", function (e) {
+                  $('#arrtlteqPicker').data("DateTimePicker").minDate(e.date);
+              });
+              $('#arrtlteqPicker').on("dp.change", function (e) {
+                  $('#arrtgteqPicker').data("DateTimePicker").maxDate(e.date);
+              });
+          });
+      </script>
+
+<div class="form-group">
+          <%= f.label :prdt, "Prdt" %>
+          <div class="row">
+            <div class='col-md-6 mb-1'>
+              <div class='input-group date' id='prdtgteqPicker'>
+                  <%= f.text_field :prdt_gteq, :class => "form-control", :placeholder => "Prdt greater than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+            <div class='col-md-6'>
+              <div class='input-group date' id='prdtlteqPicker'>
+                  <%= f.text_field :prdt_lteq, :class => "form-control", :placeholder => "Prdt less than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#prdtgteqPicker').datetimepicker({
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#prdtlteqPicker').datetimepicker({
+                  useCurrent: false,
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#prdtgteqPicker').on("dp.change", function (e) {
+                  $('#prdtlteqPicker').data("DateTimePicker").minDate(e.date);
+              });
+              $('#prdtlteqPicker').on("dp.change", function (e) {
+                  $('#prdtgteqPicker').data("DateTimePicker").maxDate(e.date);
+              });
+          });
+      </script>
+
+<div class="form-group">
+    <%= f.label :nextstanm_cont, "Nextstanm contains" %>
+    <%= f.text_field :nextstanm_cont, :class => "form-control", :placeholder => "Nextstanm contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :nextstpid, "Nextstpid" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :nextstpid_gteq, :class => "form-control", :placeholder => "Nextstpid greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :nextstpid_lteq, :class => "form-control", :placeholder => "Nextstpid less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :nextstaid, "Nextstaid" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :nextstaid_gteq, :class => "form-control", :placeholder => "Nextstaid greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :nextstaid_lteq, :class => "form-control", :placeholder => "Nextstaid less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <%= f.label :trdr_cont, "Trdr contains" %>
+    <%= f.text_field :trdr_cont, :class => "form-control", :placeholder => "Trdr contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :destnm_cont, "Destnm contains" %>
+    <%= f.text_field :destnm_cont, :class => "form-control", :placeholder => "Destnm contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :destst, "Destst" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :destst_gteq, :class => "form-control", :placeholder => "Destst greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :destst_lteq, :class => "form-control", :placeholder => "Destst less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+          <%= f.label :tmst, "Tmst" %>
+          <div class="row">
+            <div class='col-md-6 mb-1'>
+              <div class='input-group date' id='tmstgteqPicker'>
+                  <%= f.text_field :tmst_gteq, :class => "form-control", :placeholder => "Tmst greater than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+            <div class='col-md-6'>
+              <div class='input-group date' id='tmstlteqPicker'>
+                  <%= f.text_field :tmst_lteq, :class => "form-control", :placeholder => "Tmst less than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#tmstgteqPicker').datetimepicker({
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#tmstlteqPicker').datetimepicker({
+                  useCurrent: false,
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#tmstgteqPicker').on("dp.change", function (e) {
+                  $('#tmstlteqPicker').data("DateTimePicker").minDate(e.date);
+              });
+              $('#tmstlteqPicker').on("dp.change", function (e) {
+                  $('#tmstgteqPicker').data("DateTimePicker").maxDate(e.date);
+              });
+          });
+      </script>
+
+<div class="form-group">
+          <%= f.label :created_at, "Created at" %>
+          <div class="row">
+            <div class='col-md-6 mb-1'>
+              <div class='input-group date' id='created_atgteqPicker'>
+                  <%= f.text_field :created_at_gteq, :class => "form-control", :placeholder => "Created at greater than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+            <div class='col-md-6'>
+              <div class='input-group date' id='created_atlteqPicker'>
+                  <%= f.text_field :created_at_lteq, :class => "form-control", :placeholder => "Created at less than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#created_atgteqPicker').datetimepicker({
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#created_atlteqPicker').datetimepicker({
+                  useCurrent: false,
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#created_atgteqPicker').on("dp.change", function (e) {
+                  $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+              });
+              $('#created_atlteqPicker').on("dp.change", function (e) {
+                  $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+              });
+          });
+      </script>
+
+        
+
+      <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+      <a href="/cta_locs" class="btn btn-default btn-block mb-1">Clear filters</a>
+    <% end %>
+    <a class="btn btn-default btn-block mb-1" data-toggle="collapse" href="#cta_locs_filters">
+      Show Filters
+    </a>
+  </div>
 </div>
 
 <div class="row">

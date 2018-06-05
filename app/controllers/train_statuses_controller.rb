@@ -1,6 +1,7 @@
 class TrainStatusesController < ApplicationController
   def index
-    @train_statuses = TrainStatus.page(params[:page]).per(10)
+    @q = TrainStatus.ransack(params[:q])
+    @train_statuses = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("train_statuses/index.html.erb")
   end

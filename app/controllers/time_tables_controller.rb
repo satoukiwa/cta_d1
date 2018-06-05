@@ -1,6 +1,7 @@
 class TimeTablesController < ApplicationController
   def index
-    @time_tables = TimeTable.page(params[:page]).per(10)
+    @q = TimeTable.ransack(params[:q])
+    @time_tables = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("time_tables/index.html.erb")
   end

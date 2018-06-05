@@ -1,6 +1,7 @@
 class IntStatLensController < ApplicationController
   def index
-    @int_stat_lens = IntStatLen.page(params[:page]).per(10)
+    @q = IntStatLen.ransack(params[:q])
+    @int_stat_lens = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("int_stat_lens/index.html.erb")
   end

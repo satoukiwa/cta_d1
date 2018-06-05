@@ -1,6 +1,7 @@
 class CtaLocsController < ApplicationController
   def index
-    @cta_locs = CtaLoc.page(params[:page]).per(10)
+    @q = CtaLoc.ransack(params[:q])
+    @cta_locs = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("cta_locs/index.html.erb")
   end

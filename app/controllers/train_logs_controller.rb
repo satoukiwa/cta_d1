@@ -1,6 +1,7 @@
 class TrainLogsController < ApplicationController
   def index
-    @train_logs = TrainLog.page(params[:page]).per(10)
+    @q = TrainLog.ransack(params[:q])
+    @train_logs = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("train_logs/index.html.erb")
   end
