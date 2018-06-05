@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Int_stat_len resource:
+  # CREATE
+  get "/int_stat_lens/new", :controller => "int_stat_lens", :action => "new"
+  post "/create_int_stat_len", :controller => "int_stat_lens", :action => "create"
+
+  # READ
+  get "/int_stat_lens", :controller => "int_stat_lens", :action => "index"
+  get "/int_stat_lens/:id", :controller => "int_stat_lens", :action => "show"
+
+  # UPDATE
+  get "/int_stat_lens/:id/edit", :controller => "int_stat_lens", :action => "edit"
+  post "/update_int_stat_len/:id", :controller => "int_stat_lens", :action => "update"
+
+  # DELETE
+  get "/delete_int_stat_len/:id", :controller => "int_stat_lens", :action => "destroy"
+  #------------------------------
+
   # Routes for the Train_status resource:
   # CREATE
   get "/train_statuses/new", :controller => "train_statuses", :action => "new"

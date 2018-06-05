@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @int_stat_len.errors.any? %>
+  <% @int_stat_len.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Int Stat Len #<%= @int_stat_len.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_int_stat_len/<%= @int_stat_len.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for dstopid -->
+      <div class="form-group">
+        <label for="dstopid" class="control-label">
+          Dstopid
+        </label>
+
+        <input type="text" id="dstopid" name="dstopid" placeholder="Dstopid" class="form-control" value="<%= @int_stat_len.dstopid %>">
+      </div>
+
+      <!-- Label and input for astopid -->
+      <div class="form-group">
+        <label for="astopid" class="control-label">
+          Astopid
+        </label>
+
+        <input type="text" id="astopid" name="astopid" placeholder="Astopid" class="form-control" value="<%= @int_stat_len.astopid %>">
+      </div>
+
+      <!-- Label and input for distance -->
+      <div class="form-group">
+        <label for="distance" class="control-label">
+          Distance
+        </label>
+
+        <input type="text" id="distance" name="distance" placeholder="Distance" class="form-control" value="<%= @int_stat_len.distance %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Int Stat Len
+      </button>
+      or
+      <a href="/int_stat_lens/<%= @int_stat_len.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

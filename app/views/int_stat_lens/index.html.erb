@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Int stat lens
+    <a href="/int_stat_lens/new" class="btn btn-lg btn-success">New Int stat len</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Dstopid</th>
+        <th>Astopid</th>
+        <th>Distance</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @int_stat_lens.each do |int_stat_len| %>
+      <tr>
+        <td><%= int_stat_len.dstopid %></td>
+        <td><%= int_stat_len.astopid %></td>
+        <td><%= int_stat_len.distance %></td>
+        <td>
+          <a href="/int_stat_lens/<%= int_stat_len.id %>" class="btn btn-primary">Show</a>
+          <a href="/int_stat_lens/<%= int_stat_len.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_int_stat_len/<%= int_stat_len.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
