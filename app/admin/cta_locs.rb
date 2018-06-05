@@ -1,4 +1,6 @@
 ActiveAdmin.register CtaLoc do
+
+ permit_params :rn, :tmst, :destst, :destnm, :trdr, :nextstaid, :nextstpid, :nextstanm, :prdt, :arrt, :isapp, :isdly, :flags, :lat, :lon, :heading
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
