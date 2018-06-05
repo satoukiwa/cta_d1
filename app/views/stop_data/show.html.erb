@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3>Stop Datum #<%= @stop_datum.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Station name</dt>
+      <dd><%= @stop_datum.station_name %></dd>
+
+      <dt>Stop name</dt>
+      <dd><%= @stop_datum.stop_name %></dd>
+
+      <dt>Long</dt>
+      <dd><%= @stop_datum.long %></dd>
+
+      <dt>Lat</dt>
+      <dd><%= @stop_datum.lat %></dd>
+
+      <dt>Stop</dt>
+      <dd><%= @stop_datum.stop_id %></dd>
+
+      <dt>Map</dt>
+      <dd><%= @stop_datum.map_id %></dd>
+
+      <dt>Direction</dt>
+      <dd><%= @stop_datum.direction_id %></dd>
+
+      <dt>Mileage</dt>
+      <dd><%= @stop_datum.mileage %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/stop_data" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/stop_data/<%= @stop_datum.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_stop_datum/<%= @stop_datum.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

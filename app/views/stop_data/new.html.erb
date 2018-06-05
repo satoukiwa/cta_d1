@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @stop_datum.errors.any? %>
+  <% @stop_datum.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Stop Datum</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_stop_datum" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for station_name -->
+      <div class="form-group">
+        <label for="station_name" class="control-label">
+          Station name
+        </label>
+
+        <input type="text" id="station_name" name="station_name" placeholder="Station name" class="form-control" value="<%= @stop_datum.station_name %>">
+      </div>
+
+      <!-- Label and input for stop_name -->
+      <div class="form-group">
+        <label for="stop_name" class="control-label">
+          Stop name
+        </label>
+
+        <input type="text" id="stop_name" name="stop_name" placeholder="Stop name" class="form-control" value="<%= @stop_datum.stop_name %>">
+      </div>
+
+      <!-- Label and input for long -->
+      <div class="form-group">
+        <label for="long" class="control-label">
+          Long
+        </label>
+
+        <input type="text" id="long" name="long" placeholder="Long" class="form-control" value="<%= @stop_datum.long %>">
+      </div>
+
+      <!-- Label and input for lat -->
+      <div class="form-group">
+        <label for="lat" class="control-label">
+          Lat
+        </label>
+
+        <input type="text" id="lat" name="lat" placeholder="Lat" class="form-control" value="<%= @stop_datum.lat %>">
+      </div>
+
+      <!-- Label and input for stop_id -->
+      <div class="form-group">
+        <label for="stop_id" class="control-label">
+          Stop
+        </label>
+
+        <input type="text" id="stop_id" name="stop_id" placeholder="Stop" class="form-control" value="<%= @stop_datum.stop_id %>">
+      </div>
+
+      <!-- Label and input for map_id -->
+      <div class="form-group">
+        <label for="map_id" class="control-label">
+          Map
+        </label>
+
+        <input type="text" id="map_id" name="map_id" placeholder="Map" class="form-control" value="<%= @stop_datum.map_id %>">
+      </div>
+
+      <!-- Label and input for direction_id -->
+      <div class="form-group">
+        <label for="direction_id" class="control-label">
+          Direction
+        </label>
+
+        <input type="text" id="direction_id" name="direction_id" placeholder="Direction" class="form-control" value="<%= @stop_datum.direction_id %>">
+      </div>
+
+      <!-- Label and input for mileage -->
+      <div class="form-group">
+        <label for="mileage" class="control-label">
+          Mileage
+        </label>
+
+        <input type="text" id="mileage" name="mileage" placeholder="Mileage" class="form-control" value="<%= @stop_datum.mileage %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Stop Datum
+      </button>
+      or
+      <a href="/stop_data">Cancel</a>
+    </form>
+  </div>
+</div>
