@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root :to => "stop_data#index"
   # Routes for the Cta_loc resource:
   # CREATE
