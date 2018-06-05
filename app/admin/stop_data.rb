@@ -1,4 +1,6 @@
 ActiveAdmin.register StopDatum do
+
+ permit_params :station_name, :stop_name, :long, :lat, :stop_id, :map_id, :direction_id, :mileage
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
