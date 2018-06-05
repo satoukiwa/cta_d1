@@ -1,0 +1,172 @@
+<!-- Validation failure messages -->
+<% if @cta_loc.errors.any? %>
+  <% @cta_loc.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Cta Loc</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_cta_loc" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for rn -->
+      <div class="form-group">
+        <label for="rn" class="control-label">
+          Rn
+        </label>
+
+        <input type="text" id="rn" name="rn" placeholder="Rn" class="form-control" value="<%= @cta_loc.rn %>">
+      </div>
+
+      <!-- Label and input for tmst -->
+      <div class="form-group">
+        <label for="tmst" class="control-label">
+          Tmst
+        </label>
+
+        <input type="text" id="tmst" name="tmst" placeholder="Tmst" class="form-control" value="<%= @cta_loc.tmst %>">
+      </div>
+
+      <!-- Label and input for destst -->
+      <div class="form-group">
+        <label for="destst" class="control-label">
+          Destst
+        </label>
+
+        <input type="text" id="destst" name="destst" placeholder="Destst" class="form-control" value="<%= @cta_loc.destst %>">
+      </div>
+
+      <!-- Label and input for destnm -->
+      <div class="form-group">
+        <label for="destnm" class="control-label">
+          Destnm
+        </label>
+
+        <input type="text" id="destnm" name="destnm" placeholder="Destnm" class="form-control" value="<%= @cta_loc.destnm %>">
+      </div>
+
+      <!-- Label and input for trdr -->
+      <div class="form-group">
+        <label for="trdr" class="control-label">
+          Trdr
+        </label>
+
+        <input type="text" id="trdr" name="trdr" placeholder="Trdr" class="form-control" value="<%= @cta_loc.trdr %>">
+      </div>
+
+      <!-- Label and input for nextstaid -->
+      <div class="form-group">
+        <label for="nextstaid" class="control-label">
+          Nextstaid
+        </label>
+
+        <input type="text" id="nextstaid" name="nextstaid" placeholder="Nextstaid" class="form-control" value="<%= @cta_loc.nextstaid %>">
+      </div>
+
+      <!-- Label and input for nextstpid -->
+      <div class="form-group">
+        <label for="nextstpid" class="control-label">
+          Nextstpid
+        </label>
+
+        <input type="text" id="nextstpid" name="nextstpid" placeholder="Nextstpid" class="form-control" value="<%= @cta_loc.nextstpid %>">
+      </div>
+
+      <!-- Label and input for nextstanm -->
+      <div class="form-group">
+        <label for="nextstanm" class="control-label">
+          Nextstanm
+        </label>
+
+        <input type="text" id="nextstanm" name="nextstanm" placeholder="Nextstanm" class="form-control" value="<%= @cta_loc.nextstanm %>">
+      </div>
+
+      <!-- Label and input for prdt -->
+      <div class="form-group">
+        <label for="prdt" class="control-label">
+          Prdt
+        </label>
+
+        <input type="text" id="prdt" name="prdt" placeholder="Prdt" class="form-control" value="<%= @cta_loc.prdt %>">
+      </div>
+
+      <!-- Label and input for arrt -->
+      <div class="form-group">
+        <label for="arrt" class="control-label">
+          Arrt
+        </label>
+
+        <input type="text" id="arrt" name="arrt" placeholder="Arrt" class="form-control" value="<%= @cta_loc.arrt %>">
+      </div>
+
+      <!-- Label and input for isapp -->
+      <div class="form-group">
+        <label for="isapp" class="control-label">
+          Isapp
+        </label>
+
+        <input type="text" id="isapp" name="isapp" placeholder="Isapp" class="form-control" value="<%= @cta_loc.isapp %>">
+      </div>
+
+      <!-- Label and input for isdly -->
+      <div class="form-group">
+        <label for="isdly" class="control-label">
+          Isdly
+        </label>
+
+        <input type="text" id="isdly" name="isdly" placeholder="Isdly" class="form-control" value="<%= @cta_loc.isdly %>">
+      </div>
+
+      <!-- Label and input for flags -->
+      <div class="form-group">
+        <label for="flags" class="control-label">
+          Flags
+        </label>
+
+        <input type="text" id="flags" name="flags" placeholder="Flags" class="form-control" value="<%= @cta_loc.flags %>">
+      </div>
+
+      <!-- Label and input for lat -->
+      <div class="form-group">
+        <label for="lat" class="control-label">
+          Lat
+        </label>
+
+        <input type="text" id="lat" name="lat" placeholder="Lat" class="form-control" value="<%= @cta_loc.lat %>">
+      </div>
+
+      <!-- Label and input for lon -->
+      <div class="form-group">
+        <label for="lon" class="control-label">
+          Lon
+        </label>
+
+        <input type="text" id="lon" name="lon" placeholder="Lon" class="form-control" value="<%= @cta_loc.lon %>">
+      </div>
+
+      <!-- Label and input for heading -->
+      <div class="form-group">
+        <label for="heading" class="control-label">
+          Heading
+        </label>
+
+        <input type="text" id="heading" name="heading" placeholder="Heading" class="form-control" value="<%= @cta_loc.heading %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Cta Loc
+      </button>
+      or
+      <a href="/cta_locs">Cancel</a>
+    </form>
+  </div>
+</div>

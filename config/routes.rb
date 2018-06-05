@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Cta_loc resource:
+  # CREATE
+  get "/cta_locs/new", :controller => "cta_locs", :action => "new"
+  post "/create_cta_loc", :controller => "cta_locs", :action => "create"
+
+  # READ
+  get "/cta_locs", :controller => "cta_locs", :action => "index"
+  get "/cta_locs/:id", :controller => "cta_locs", :action => "show"
+
+  # UPDATE
+  get "/cta_locs/:id/edit", :controller => "cta_locs", :action => "edit"
+  post "/update_cta_loc/:id", :controller => "cta_locs", :action => "update"
+
+  # DELETE
+  get "/delete_cta_loc/:id", :controller => "cta_locs", :action => "destroy"
+  #------------------------------
+
   # Routes for the Int_stat_len resource:
   # CREATE
   get "/int_stat_lens/new", :controller => "int_stat_lens", :action => "new"

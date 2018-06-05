@@ -1,0 +1,70 @@
+<div class="page-header">
+  <h3>Cta Loc #<%= @cta_loc.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Rn</dt>
+      <dd><%= @cta_loc.rn %></dd>
+
+      <dt>Tmst</dt>
+      <dd><%= @cta_loc.tmst %></dd>
+
+      <dt>Destst</dt>
+      <dd><%= @cta_loc.destst %></dd>
+
+      <dt>Destnm</dt>
+      <dd><%= @cta_loc.destnm %></dd>
+
+      <dt>Trdr</dt>
+      <dd><%= @cta_loc.trdr %></dd>
+
+      <dt>Nextstaid</dt>
+      <dd><%= @cta_loc.nextstaid %></dd>
+
+      <dt>Nextstpid</dt>
+      <dd><%= @cta_loc.nextstpid %></dd>
+
+      <dt>Nextstanm</dt>
+      <dd><%= @cta_loc.nextstanm %></dd>
+
+      <dt>Prdt</dt>
+      <dd><%= @cta_loc.prdt %></dd>
+
+      <dt>Arrt</dt>
+      <dd><%= @cta_loc.arrt %></dd>
+
+      <dt>Isapp</dt>
+      <dd><%= @cta_loc.isapp %></dd>
+
+      <dt>Isdly</dt>
+      <dd><%= @cta_loc.isdly %></dd>
+
+      <dt>Flags</dt>
+      <dd><%= @cta_loc.flags %></dd>
+
+      <dt>Lat</dt>
+      <dd><%= @cta_loc.lat %></dd>
+
+      <dt>Lon</dt>
+      <dd><%= @cta_loc.lon %></dd>
+
+      <dt>Heading</dt>
+      <dd><%= @cta_loc.heading %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/cta_locs" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/cta_locs/<%= @cta_loc.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_cta_loc/<%= @cta_loc.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
