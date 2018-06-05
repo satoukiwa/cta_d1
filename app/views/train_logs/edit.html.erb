@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @train_log.errors.any? %>
+  <% @train_log.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Train Log #<%= @train_log.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_train_log/<%= @train_log.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for train_number -->
+      <div class="form-group">
+        <label for="train_number" class="control-label">
+          Train number
+        </label>
+
+        <input type="text" id="train_number" name="train_number" placeholder="Train number" class="form-control" value="<%= @train_log.train_number %>">
+      </div>
+
+      <!-- Label and input for station_name -->
+      <div class="form-group">
+        <label for="station_name" class="control-label">
+          Station name
+        </label>
+
+        <input type="text" id="station_name" name="station_name" placeholder="Station name" class="form-control" value="<%= @train_log.station_name %>">
+      </div>
+
+      <!-- Label and input for stop_name -->
+      <div class="form-group">
+        <label for="stop_name" class="control-label">
+          Stop name
+        </label>
+
+        <input type="text" id="stop_name" name="stop_name" placeholder="Stop name" class="form-control" value="<%= @train_log.stop_name %>">
+      </div>
+
+      <!-- Label and input for train_locationbasestation -->
+      <div class="form-group">
+        <label for="train_locationbasestation" class="control-label">
+          Train locationbasestation
+        </label>
+
+        <input type="text" id="train_locationbasestation" name="train_locationbasestation" placeholder="Train locationbasestation" class="form-control" value="<%= @train_log.train_locationbasestation %>">
+      </div>
+
+      <!-- Label and input for record_time -->
+      <div class="form-group">
+        <label for="record_time" class="control-label">
+          Record time
+        </label>
+
+        <input type="text" id="record_time" name="record_time" placeholder="Record time" class="form-control" value="<%= @train_log.record_time %>">
+      </div>
+
+      <!-- Label and input for train_locationmileage -->
+      <div class="form-group">
+        <label for="train_locationmileage" class="control-label">
+          Train locationmileage
+        </label>
+
+        <input type="text" id="train_locationmileage" name="train_locationmileage" placeholder="Train locationmileage" class="form-control" value="<%= @train_log.train_locationmileage %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Train Log
+      </button>
+      or
+      <a href="/train_logs/<%= @train_log.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

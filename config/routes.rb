@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Train_log resource:
+  # CREATE
+  get "/train_logs/new", :controller => "train_logs", :action => "new"
+  post "/create_train_log", :controller => "train_logs", :action => "create"
+
+  # READ
+  get "/train_logs", :controller => "train_logs", :action => "index"
+  get "/train_logs/:id", :controller => "train_logs", :action => "show"
+
+  # UPDATE
+  get "/train_logs/:id/edit", :controller => "train_logs", :action => "edit"
+  post "/update_train_log/:id", :controller => "train_logs", :action => "update"
+
+  # DELETE
+  get "/delete_train_log/:id", :controller => "train_logs", :action => "destroy"
+  #------------------------------
+
   # Routes for the Time_table resource:
   # CREATE
   get "/time_tables/new", :controller => "time_tables", :action => "new"
