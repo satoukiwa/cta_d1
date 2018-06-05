@@ -1,6 +1,6 @@
 class TimeTablesController < ApplicationController
   def index
-    @time_tables = TimeTable.all
+    @time_tables = TimeTable.page(params[:page]).per(10)
 
     render("time_tables/index.html.erb")
   end

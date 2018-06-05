@@ -1,6 +1,6 @@
 class TrainStatusesController < ApplicationController
   def index
-    @train_statuses = TrainStatus.all
+    @train_statuses = TrainStatus.page(params[:page]).per(10)
 
     render("train_statuses/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class CtaLocsController < ApplicationController
   def index
-    @cta_locs = CtaLoc.all
+    @cta_locs = CtaLoc.page(params[:page]).per(10)
 
     render("cta_locs/index.html.erb")
   end

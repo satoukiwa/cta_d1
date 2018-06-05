@@ -1,6 +1,6 @@
 class StopDataController < ApplicationController
   def index
-    @stop_data = StopDatum.all
+    @stop_data = StopDatum.page(params[:page]).per(10)
 
     render("stop_data/index.html.erb")
   end

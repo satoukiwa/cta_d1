@@ -1,6 +1,6 @@
 class TrainLogsController < ApplicationController
   def index
-    @train_logs = TrainLog.all
+    @train_logs = TrainLog.page(params[:page]).per(10)
 
     render("train_logs/index.html.erb")
   end
