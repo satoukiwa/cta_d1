@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Train_status resource:
+  # CREATE
+  get "/train_statuses/new", :controller => "train_statuses", :action => "new"
+  post "/create_train_status", :controller => "train_statuses", :action => "create"
+
+  # READ
+  get "/train_statuses", :controller => "train_statuses", :action => "index"
+  get "/train_statuses/:id", :controller => "train_statuses", :action => "show"
+
+  # UPDATE
+  get "/train_statuses/:id/edit", :controller => "train_statuses", :action => "edit"
+  post "/update_train_status/:id", :controller => "train_statuses", :action => "update"
+
+  # DELETE
+  get "/delete_train_status/:id", :controller => "train_statuses", :action => "destroy"
+  #------------------------------
+
   # Routes for the Train_log resource:
   # CREATE
   get "/train_logs/new", :controller => "train_logs", :action => "new"

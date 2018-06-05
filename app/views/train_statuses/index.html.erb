@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Train statuses
+    <a href="/train_statuses/new" class="btn btn-lg btn-success">New Train status</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Train number</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @train_statuses.each do |train_status| %>
+      <tr>
+        <td><%= train_status.train_number %></td>
+        <td><%= train_status.status %></td>
+        <td>
+          <a href="/train_statuses/<%= train_status.id %>" class="btn btn-primary">Show</a>
+          <a href="/train_statuses/<%= train_status.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_train_status/<%= train_status.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
